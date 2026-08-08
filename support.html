@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>littlEye AI — Podpora / Support</title>
+<style>
+  :root {
+    --navy: #171c33; --violet: #7b3d8d; --pink: #b85c8f;
+    --text: #26243a; --muted: #6b6880; --bg: #f6f4f9; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #eceaf4; --muted: #a9a6bd; --bg: #14121d; --card: #1e1b2a; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.65; }
+  .hero { background: linear-gradient(135deg, #4d2970, #7b3d8d, #b85c8f);
+          color: #fff; padding: 56px 24px 48px; text-align: center; }
+  .hero .eye { font-size: 54px; }
+  .hero h1 { font-size: 34px; font-weight: 800; margin-top: 8px; }
+  .hero h1 .cap { color: #ffd9ec; }
+  .hero p { opacity: .9; margin-top: 6px; }
+  main { max-width: 760px; margin: -24px auto 48px; padding: 0 20px; }
+  .card { background: var(--card); border-radius: 18px; padding: 28px 30px;
+          margin-bottom: 20px; box-shadow: 0 8px 28px rgba(20, 12, 40, .10); }
+  h2 { font-size: 21px; margin-bottom: 10px; color: var(--violet); }
+  h3 { font-size: 16px; margin: 18px 0 6px; }
+  ul, ol { padding-left: 22px; margin: 8px 0; }
+  li { margin: 5px 0; }
+  .muted { color: var(--muted); font-size: 14px; }
+  a { color: var(--pink); }
+  .contact { display: inline-block; background: linear-gradient(135deg, #7b3d8d, #b85c8f);
+             color: #fff; text-decoration: none; font-weight: 700;
+             padding: 12px 26px; border-radius: 999px; margin-top: 10px; }
+  details { margin: 10px 0; border-left: 3px solid var(--pink); padding-left: 14px; }
+  summary { cursor: pointer; font-weight: 650; padding: 4px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 15px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid rgba(120,100,160,.18); }
+  .lang { border-top: 2px dashed rgba(120, 100, 160, .25); margin-top: 34px; padding-top: 30px; }
+  footer { text-align: center; padding: 30px 20px 50px; }
+  .forensika { font-weight: 900; font-size: 26px; }
+  .f-n { color: #171c33; } .f-i { color: #3b73f0; } .f-k { color: #26805a; } .f-a { color: #a6a1e6; }
+  @media (prefers-color-scheme: dark) { .f-n { color: #cdd6f4; } }
+  footer .tag { letter-spacing: 2.5px; font-size: 11px; color: var(--muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eye">👁️</div>
+  <h1>littl<span class="cap">E</span>ye AI</h1>
+  <p>Podpora · Support</p>
+</div>
+
+<main>
+  <div class="card">
+    <h2>O aplikácii</h2>
+    <p>littlEye AI je aplikácia pre súdnych lekárov a patológov: tréning a vyhodnocovanie
+       AI modelov z mikrofotografií histologických preparátov (HE farbenie), pracovné
+       prípady so súhrnmi, atlas diagnóz a edukačný modul špeciálnych farbení a IHC.
+       Všetko beží výhradne vo vašom zariadení.</p>
+
+    <h3>Podporované zariadenia</h3>
+    <table>
+      <tr><th>Zariadenie</th><th>Minimálny systém</th></tr>
+      <tr><td>iPhone</td><td>iOS 17</td></tr>
+      <tr><td>iPad</td><td>iPadOS 17 (tréning: modely s čipom M)</td></tr>
+      <tr><td>Mac</td><td>macOS 14 (Apple Silicon odporúčané)</td></tr>
+    </table>
+
+    <h2 style="margin-top:22px">Časté otázky</h2>
+
+    <details>
+      <summary>Ako dostanem snímky zo skenera / mikroskopu do aplikácie?</summary>
+      <p>Aplikácia číta hotové súbory JPEG, PNG, TIFF a HEIC — nepotrebuje ovládače.
+         Exportujte snímky z programu kamery či skenera a preneste ich cez aplikáciu
+         Súbory (USB-C kľúč, sieťový disk SMB, iCloud Drive) alebo AirDropom.
+         Podrobný návod je v aplikácii v sekcii <em>Hardvér a snímanie</em>.</p>
+    </details>
+
+    <details>
+      <summary>Koľko snímok potrebujem na tréning modelu?</summary>
+      <p>Technické minimum sú 2 triedy po 5 snímok; rozumný začiatok je 30+ snímok na
+         triedu z viacerých prípadov, pri jednom zväčšení. Pravidlá pre trénerov sú
+         v aplikácii v sekcii <em>Metodika</em>.</p>
+    </details>
+
+    <details>
+      <summary>Čo je súbor .le3AI?</summary>
+      <p>Prenosný balík natrénovaného modelu: Core ML model + metriky (vrátane konfúznej
+         matice) + audit trail (autor, dátum, triedy). Zdieľa sa AirDropom, mailom či cez
+         Súbory a importuje dvojklikom/ťuknutím. Snímky preparátov nie sú jeho súčasťou.</p>
+    </details>
+
+    <details>
+      <summary>Model mi na nové sklíčko dáva nízku istotu — čo s tým?</summary>
+      <p>Najčastejšie príčiny: iné zväčšenie než v tréningu, málo rôznorodých tréningových
+         snímok, alebo nález, ktorý model nepozná. Doplňte snímky danej triedy (ideálne z
+         viacerých prípadov), držte jedno zväčšenie a sledujte konfúznu maticu v detaile
+         modelu — ukáže, ktoré triedy si model zamieňa.</p>
+    </details>
+
+    <details>
+      <summary>Ako si zálohujem dáta?</summary>
+      <p>Prípady → menu ⋯ → <em>Zálohovať archív na disk</em>. Vyberiete priečinok
+         (externý disk, USB-C, sieťové úložisko) a aplikácia doň zapíše kompletnú zálohu
+         (register, snímky, modely, manifest).</p>
+    </details>
+
+    <details>
+      <summary>Je aplikácia zdravotnícka pomôcka?</summary>
+      <p>Nie. littlEye AI je výskumný a podporný nástroj pre kvalifikovaných odborníkov.
+         Neposkytuje diagnózu — finálne posúdenie vždy patrí patológovi.</p>
+    </details>
+
+    <h2 style="margin-top:22px">Kontakt</h2>
+    <p>Otázky, hlásenia chýb aj návrhy na vylepšenie posielajte na:</p>
+    <p><a class="contact" href="mailto:jansikuta@me.com?subject=littlEye%20AI%20—%20podpora">✉️ jansikuta@me.com</a></p>
+    <p class="muted" style="margin-top:8px">MUDr. Ján Šikuta, súdny lekár. Do správy prosím uveďte
+       zariadenie, verziu systému a verziu aplikácie (Info o aplikácii).</p>
+
+    <div class="lang" lang="en">
+      <h2>Support (English)</h2>
+      <p>littlEye AI is an app for forensic pathologists: training and evaluating AI models
+         from histology slide microphotographs (H&amp;E), case workflow with summaries,
+         a diagnosis atlas and an education module for special stains and IHC.
+         Everything runs entirely on your device.</p>
+      <h3>Requirements</h3>
+      <p>iPhone (iOS 17+), iPad (iPadOS 17+; on-device training on M-chip models),
+         Mac (macOS 14+, Apple Silicon recommended).</p>
+      <h3>Contact</h3>
+      <p>Questions, bug reports and suggestions:
+         <a href="mailto:jansikuta@me.com?subject=littlEye%20AI%20—%20support">jansikuta@me.com</a>
+         (Ján Šikuta, MD, forensic pathologist). Please include your device, OS version
+         and app version (About screen).</p>
+      <p class="muted">littlEye AI is a research and decision-support tool, not a medical
+         device — the final assessment always belongs to the pathologist.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="forensika"><span class="f-n">Forens</span><span class="f-i">i</span><span class="f-k">k</span><span class="f-a">a</span></div>
+  <div class="tag">OBJASŇUJEME · SPÁJAME · POSÚVAME</div>
+  <p style="margin-top:8px"><a href="https://forensika.eu">forensika.eu ›</a></p>
+  <p class="muted" style="margin-top:6px">littlEye AI — súdnolekársky projekt Forensika · <a href="privacy.html">Ochrana súkromia / Privacy</a></p>
+</footer>
+
+</body>
+</html>
