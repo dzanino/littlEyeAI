@@ -96,6 +96,25 @@
   footer .copy{font-size:13.5px;color:var(--muted);}
   footer .copy a{color:var(--magenta);font-weight:600;}
   footer .copy a:hover{text-decoration:underline;}
+
+  /* ---------- Mobil ---------- */
+  @media (max-width:760px){
+    .wrap{padding:0 18px;}
+    .hero{padding:52px 0 60px;}
+    .eye{font-size:52px;margin-bottom:14px;}
+    .hero p.lede{font-size:16px;margin-bottom:24px;}
+    .btn{padding:11px 20px;font-size:14.5px;}
+    main{padding:42px 0 12px;}
+    section{margin-bottom:26px;}
+    .card{padding:20px 18px;border-radius:16px;}
+    ul.docs a{padding:12px 14px;font-size:14px;align-items:flex-start;}
+    ul.docs svg{margin-top:2px;}
+    ul.feat li{font-size:15px;}
+    p{font-size:15px;}
+    footer{margin-top:32px;padding:30px 0 36px;}
+  }
+  /* Dlhé odkazy a názvy súborov nesmú pretiecť mimo obrazovku */
+  a,p,li,div{overflow-wrap:anywhere;}
 </style>
 </head>
 <body>
@@ -106,7 +125,10 @@
     <h1>littl<span class="e">E</span>ye AI</h1>
     <p class="lede">Tréning a vyhodnocovanie AI modelov z histologických preparátov — pre súdnych lekárov, patológov, a najmä študentov medicíny. Všetko priamo v zariadení.</p>
     <div class="btns">
-      <a class="btn btn-primary" href="privacy.html">Ochrana súkromia</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/sk/app/littleye-ai/id6799417580?l=sk">
+        <svg viewBox="0 0 384 512" width="16" height="16" fill="currentColor" style="flex:0 0 auto"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Stiahnuť v App Store</a>
+      <a class="btn btn-ghost" href="privacy.html">Ochrana súkromia</a>
       <a class="btn btn-ghost" href="support.html">Podpora</a>
     </div>
   </div>
@@ -124,7 +146,9 @@
           <li>Tréning Core ML modelov priamo v iPade/Macu — s testovacou množinou a konfúznou maticou</li>
           <li>Prenosné modely <b>.le3AI</b> a zdieľané datasety sklíčok <b>.le3set</b> — šifrované, s metrikami a audit trailom</li>
           <li>Pracovné prípady: sklíčka, katamnéza, pitevný záver, toxikológia → stručný súhrn</li>
-          <li>Atlas <b>100 diagnóz</b> a edukačný modul: špeciálne farbenia, IHC, bunkové elementy, pigmenty</li>
+          <li>Atlas <b>vyše 100 diagnóz</b> naprieč 27 orgánmi a edukačný modul: špeciálne farbenia, IHC markery, bunkové elementy, pigmenty</li>
+          <li>Evidencia farbenia (HE, PAS, trichróm, striebrenie, elastika) a zväčšenia od <b>4× po 1000×</b></li>
+          <li>Učenie z opráv — nesprávne vyhodnotenú snímku jedným ťuknutím vrátite do datasetu</li>
         </ul>
       </div>
     </section>
@@ -149,12 +173,6 @@
           <li><a href="littlEye_AI_zdroje_dat.pdf">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
             Zdroje trénovacích dát a metodika (PDF, slovensky) ›</a></li>
-<li><a href="littlEye_AI_slide_to_model_EN.pdf">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>From slide to model — capture, training, export (PDF, English) ›</a></li>
-<li><a href="littlEye_AI_data_sources_EN.pdf">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>Training-data sources and methodology (PDF, English) ›</a></li>
-<li><a href="littlEye_AI_how_it_learns_EN.pdf">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>How littlEye AI learns — retraining step by step (PDF, English) ›</a></li>
         </ul>
       </div>
     </section>
@@ -162,9 +180,8 @@
     <section>
       <h2>Hotové modely pre kolegov</h2>
       <div class="card note">
-        <p>Aplikácia je nástroj — obsahuje jediný ukážkový model natrénovaný na syntetických vzoroch. Skutočné modely si natrénujete z vlastných preparátov, alebo si ich vymeníte s kolegami ako samostatné súbory <b>.le3AI</b>. Postavili sme ich zatiaľ dvanásť: základ rozpoznáva <b>20 tkanív</b>, diagnostické poznajú nádory mozgu, pľúc, pečene, obličky, pankreasu, prsníka, štítnej žľazy, melanóm a 9 zložiek kolorektálneho karcinómu — všetky testované na pacientoch, ktorých model nikdy nevidel.</p>
-        <p><b>Modely odvodené z michiganskej zbierky a z TCGA dočasne nešírime.</b> Overujeme s Tech Transfer Office University of Michigan, či naše chápanie licencie CC BY-NC-SA 4.0 zodpovedá predstave držiteľa práv. Rozdávali sme ich bezplatne, ako samostatné súbory a pod tou istou licenciou — no pokladáme za správnejšie počkať na písomné stanovisko než sa spoliehať na vlastný výklad.</p>
-        <p>Model kolorektálneho karcinómu (dataset NCT-CRC, CC BY 4.0) touto otázkou dotknutý nie je — vyžiadajte si ho na <a class="inline" href="mailto:jansikuta@me.com">jansikuta@me.com</a>. Virtuálne preparáty sú © Regents of the University of Michigan; nádorové snímky pochádzajú z TCGA-UT (Univerzita v Tokiu). Všetko len na nekomerčné vzdelávacie a výskumné účely.</p>
+        <p>Aby ste nezačínali od nuly, k dispozícii sú natrénované modely a dataset, z ktorého vyrástli — <b>littlEye-zaklad-v2</b> rozpozná 19 tkanív, ďalšie sú pre nervové tkanivo a srdce. Naimportujete ich, doplníte vlastné preparáty a model pretrénujete.</p>
+        <p>Vyžiadajte si ich na <a class="inline" href="mailto:forensika.eu@icloud.com">forensika.eu@icloud.com</a> — kolegom a študentom ich posielame zdarma. Modely sú odvodené z virtuálnej zbierky University of Michigan (CC BY-NC-SA 4.0), teda len na nekomerčné vzdelávacie a výskumné účely.</p>
       </div>
     </section>
 
@@ -197,7 +214,7 @@
     <div class="brand">Forens<span class="g">ika</span></div>
     <div class="words">Objasňujeme · Spájame · Posúvame</div>
     <a class="site" href="https://forensika.eu/">forensika.eu ›</a>
-    <div class="copy">© 2026 MUDr. Ján Šikuta, PhD. · <a href="mailto:jansikuta@me.com">jansikuta@me.com</a></div>
+    <div class="copy">© 2026 MUDr. Ján Šikuta, PhD. · <a href="mailto:forensika.eu@icloud.com">forensika.eu@icloud.com</a></div>
   </div>
 </footer>
 
