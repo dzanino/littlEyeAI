@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>littlEye AI — histológia a AI pre súdnych lekárov</title>
+<meta name="description" content="Tréning a vyhodnocovanie AI modelov z histologických preparátov — pre súdnych lekárov, patológov a študentov medicíny. Všetko priamo v zariadení.">
+<meta property="og:title" content="littlEye AI — histológia a AI pre súdnych lekárov">
+<meta property="og:description" content="Tréning a vyhodnocovanie AI modelov z histologických preparátov. Všetko priamo v zariadení.">
+<style>
+  :root{
+    --ink:#1c1a2c;
+    --muted:#58546d;
+    --purple:#66287a;
+    --magenta:#a8447c;
+    --pink:#fecee7;
+    --violet:#958ce0;
+    --paper:#f4f1f7;
+    --paper-2:#ece6f3;
+    --card:#ffffff;
+    --line:#e5dced;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;text-align:center;color:#fff;
+    background:
+      radial-gradient(760px 420px at 50% -10%, rgba(149,140,224,.45), transparent 62%),
+      linear-gradient(160deg,#5b2470,#2d1440);
+    padding:70px 0 84px;
+  }
+  .eye{font-size:64px;line-height:1;margin-bottom:18px;
+    filter:drop-shadow(0 10px 26px rgba(0,0,0,.35));}
+  .hero h1{font-size:clamp(38px,7vw,58px);font-weight:700;letter-spacing:.4px;line-height:1.05;margin-bottom:18px;}
+  .hero h1 .e{color:var(--pink);}
+  .hero p.lede{font-size:clamp(16px,2.5vw,19px);color:#e6dcf0;max-width:52ch;margin:0 auto 30px;}
+  .hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;
+    padding:12px 24px;border-radius:999px;transition:.2s;}
+  .btn-primary{color:#3d1650;background:#fff;box-shadow:0 10px 26px rgba(0,0,0,.22);}
+  .btn-primary:hover{transform:translateY(-1px);background:var(--pink);}
+  .btn-ghost{color:#f3e9fa;border:1px solid rgba(255,255,255,.35);}
+  .btn-ghost:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.6);}
+  .rule{height:6px;background:linear-gradient(90deg,var(--pink),var(--magenta),var(--violet),var(--purple));}
+
+  /* Sections */
+  main{padding:58px 0 20px;}
+  section{margin-bottom:34px;}
+  h2{font-size:clamp(21px,3.2vw,26px);font-weight:700;color:var(--purple);margin-bottom:14px;
+     display:flex;align-items:center;gap:10px;}
+  h2::before{content:"";width:5px;height:22px;border-radius:3px;flex:0 0 auto;
+     background:linear-gradient(180deg,var(--magenta),var(--violet));}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px;
+     box-shadow:0 1px 3px rgba(45,20,64,.05);}
+  p{color:var(--muted);font-size:15.5px;}
+  p + p{margin-top:12px;}
+  strong,b{color:var(--ink);font-weight:700;}
+
+  ul.feat{list-style:none;}
+  ul.feat li{position:relative;padding-left:28px;margin-bottom:11px;color:var(--muted);font-size:15.5px;}
+  ul.feat li:last-child{margin-bottom:0;}
+  ul.feat li::before{content:"";position:absolute;left:6px;top:9px;width:8px;height:8px;border-radius:50%;
+     background:linear-gradient(135deg,var(--magenta),var(--violet));}
+
+  /* Download links */
+  ul.docs{list-style:none;display:grid;gap:10px;}
+  ul.docs a{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:12px;
+     background:var(--paper);border:1px solid var(--line);color:var(--magenta);
+     font-weight:600;font-size:14.5px;transition:.18s;}
+  ul.docs a:hover{background:#fff;border-color:var(--magenta);transform:translateX(2px);}
+  ul.docs svg{width:18px;height:18px;flex:0 0 auto;stroke:var(--magenta);}
+  a.inline{color:var(--magenta);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+  a.inline:hover{color:var(--purple);}
+
+  .note{background:linear-gradient(160deg,#f7f2fb,#efe7f6);border:1px solid var(--line);}
+
+  /* Footer */
+  footer{margin-top:44px;padding:38px 0 44px;background:#fff;border-top:1px solid var(--line);text-align:center;}
+  .brand{font-size:26px;font-weight:700;letter-spacing:.3px;margin-bottom:8px;}
+  .brand .g{background:linear-gradient(90deg,#4FCBBB,#66B0E8 55%,#8E86EC);
+     -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .words{font-size:11px;letter-spacing:3.5px;font-weight:600;color:var(--muted);text-transform:uppercase;margin-bottom:14px;}
+  footer .site{display:inline-block;color:var(--magenta);font-weight:600;font-size:14px;margin-bottom:16px;}
+  footer .site:hover{text-decoration:underline;}
+  footer .copy{font-size:13.5px;color:var(--muted);}
+  footer .copy a{color:var(--magenta);font-weight:600;}
+  footer .copy a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eye">👁️</div>
+    <h1>littl<span class="e">E</span>ye AI</h1>
+    <p class="lede">Tréning a vyhodnocovanie AI modelov z histologických preparátov — pre súdnych lekárov, patológov, a najmä študentov medicíny. Všetko priamo v zariadení. <b>Zadarmo.</b></p>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://apps.apple.com/sk/app/id6799417580">Stiahnuť z App Store</a>
+      <a class="btn btn-ghost" href="privacy.html">Ochrana súkromia</a>
+      <a class="btn btn-ghost" href="support.html">Podpora</a>
+    </div>
+  </div>
+</header>
+<div class="rule"></div>
+
+<main>
+  <div class="wrap">
+
+    <section>
+      <h2>Čo aplikácia robí</h2>
+      <div class="card">
+        <ul class="feat">
+          <li>Dataset HE preparátov <b>27 orgánov a tkanív</b> s diagnózami a hodnotením kolegami</li>
+          <li>Tréning Core ML modelov priamo v iPade/Macu — s testovacou množinou a konfúznou maticou</li>
+          <li>Prenosné modely <b>.le3AI</b> a zdieľané datasety sklíčok <b>.le3set</b> — šifrované, s metrikami a audit trailom</li>
+          <li>Pracovné prípady: sklíčka, katamnéza, pitevný záver, toxikológia → stručný súhrn</li>
+          <li><b>Verzia 3.1:</b> semafor pripravenosti datasetu, tréningové profily, veta o kvalite modelu, import externého Core ML modelu (.mlpackage), natívne menu a skratky na Macu</li>
+          <li>Atlas <b>103 diagnóz</b> a edukačný modul: špeciálne farbenia, IHC, bunkové elementy, pigmenty</li>
+          <li><b>Zdroje a literatúra</b> — každá diagnóza, farbenie aj IHC marker má citácie s odkazom na učebnicu, článok (DOI) alebo klasifikáciu WHO</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Zadarmo — a prečo</h2>
+      <div class="card">
+        <p>Od verzie 3.0 je littlEye AI <b>zadarmo a plne funkčná</b>. Žiadne predplatné, žiadna funkcia za platbou. Aplikácia je určená študentom medicíny a lekárom v praxi — a cena stála v ceste práve im.</p>
+        <p>Vyvíja a udržiava ju jeden lekár vo voľnom čase. Kto chce, môže prispieť dobrovoľným príspevkom priamo v aplikácii (<i>Info o aplikácii → Podporiť projekt</i>) — kávou, obedom, čímkoľvek, pokojne aj opakovane. Príspevok ide na <b>údržbu a ďalší vývoj</b> a <b>nič neodomyká</b>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Návody na stiahnutie</h2>
+      <div class="card">
+        <p style="margin-bottom:16px;">Príručka pre lekárov a študentov — od prvého spustenia cez tréning vlastného modelu až po prácu s prípadmi. Rovnaký obsah v oboch jazykoch.</p>
+        <ul class="docs">
+          <li><a href="littlEye_AI_manual_3.1_SK.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <b>Manuál 3.1 pre lekárov a študentov</b> — nový, 19 strán (PDF, slovensky) ›</a></li>
+          <li><a href="littlEye_AI_manual_3.1_EN.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            <b>Manual 3.1 for physicians and students</b> — new, 19 pages (PDF, English) ›</a></li>
+          <li><a href="littlEye_AI_navod_pre_lekarov_v3.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Návod pre lekárov (PDF, slovensky) ›</a></li>
+          <li><a href="littlEye_AI_user_guide_v3_EN.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            User guide for physicians (PDF, English) ›</a></li>
+          <li><a href="littlEye_AI_ako_sa_uci.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Ako sa littlEye AI učí — dotrénovanie krok za krokom (PDF, slovensky) ›</a></li>
+          <li><a href="littlEye_AI_od_sklicka_po_model.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Od sklíčka po model — snímanie, tréning, export (PDF, slovensky) ›</a></li>
+          <li><a href="littlEye_AI_zdroje_dat.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Zdroje trénovacích dát a metodika (PDF, slovensky) ›</a></li>
+<li><a href="littlEye_AI_slide_to_model_EN.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>From slide to model — capture, training, export (PDF, English) ›</a></li>
+<li><a href="littlEye_AI_data_sources_EN.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>Training-data sources and methodology (PDF, English) ›</a></li>
+<li><a href="littlEye_AI_how_it_learns_EN.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>How littlEye AI learns — retraining step by step (PDF, English) ›</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hotové modely pre kolegov</h2>
+      <div class="card note">
+        <p>Aplikácia je nástroj — obsahuje jediný ukážkový model natrénovaný na syntetických vzoroch. Skutočné modely si natrénujete z vlastných preparátov, alebo si ich vymeníte s kolegami ako samostatné súbory <b>.le3AI</b>. Modely nikdy neboli a nebudú súčasťou aplikácie.</p>
+        <p><b>Modely odvodené z michiganskej zbierky sme zmazali.</b> Požiadali sme University of Michigan o stanovisko k licencii CC BY-NC-SA 4.0. Odpoveď znela, že naše použitie je komerčné a licencia ho nepokrýva — a to aj vtedy, keď snímky nie sú súčasťou produktu. Stanovisko sme prijali bez námietok: modely aj výrezy snímok sme odstránili a nikdy neboli nikomu odovzdané. Zbierku uvádzame naďalej ako zdroj, na ktorom sme metódu overili.</p>
+        <p>Rovnaká otázka sa týka modelov odvodených z <b>TCGA-UT</b> (Univerzita v Tokiu), ktoré sú pod tou istou nekomerčnou licenciou — tie zatiaľ nešírime.</p>
+        <p>Licenčne čistý je <b>model kolorektálneho karcinómu</b>: dataset NCT-CRC je pod CC BY 4.0, ktorá komerčné použitie povoľuje. Rozlišuje 9 zložiek nádoru a dosahuje 88 % na 7 180 snímkach od päťdesiatich pacientov, ktorých nikdy nevidel. Vyžiadajte si ho na <a class="inline" href="mailto:forensika.eu@icloud.com">forensika.eu@icloud.com</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Súkromie na prvom mieste</h2>
+      <div class="card">
+        <p>Celá aplikácia pracuje výhradne v zariadení — snímky, prípady aj modely ho nikdy neopúšťajú. Na sieť sa nepripája; jedinými výnimkami sú dobrovoľný príspevok cez App Store a odkazy na literatúru, ktoré sa otvárajú v prehliadači. <a class="inline" href="privacy.html">Zásady ochrany súkromia ›</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>O projekte</h2>
+      <div class="card">
+        <p>littlEye AI je výsledkom spolupráce odborníkov z troch pracovísk Lekárskej fakulty UK v Bratislave: <b>Ústavu histológie a embryológie LF UK</b>, <b>Ústavu patologickej anatómie LF UK</b> a <b>Ústavu súdneho lekárstva a súdnolekárskej toxikológie LF UK</b>. Aplikácia dozrievala dlhší čas — obsah sa prepracovával na základe skúseností z aplikácií <a class="inline" href="https://apps.apple.com/sk/app/4n6-tools-lite/id6783425913">4n6 Tools</a> a <a class="inline" href="https://apps.apple.com/sk/app/colorime3ka/id6793206733">Colorime3ka</a>.</p>
+        <p>littlEye AI je súčasťou rodiny nástrojov <b>Forensika</b> pre súdne lekárstvo. Najnovší z nich je <a class="inline" href="https://apps.apple.com/sk/app/aprehliadky/id6808879666">aPrehliadky</a> — 3D snímanie tela na iPhone pomocou LiDARu a fotogrametrie, s meraním a dokumentáciou nálezov priamo na modeli, a k nemu <a class="inline" href="https://apps.apple.com/sk/app/fotograme3ka-3d/id6809335678">Fotograme3ka 3D Výpočet</a> pre Mac, ktorý model prepočíta vo vyššom detaile. Rovnaká zásada ako tu: všetko v zariadení, nič v cloude.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Vymedzenie</h2>
+      <div class="card">
+        <p>Výskumný a podporný nástroj pre kvalifikovaných odborníkov — nie zdravotnícka pomôcka. Finálne posúdenie vždy patrí patológovi či súdnemu lekárovi.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Forens<span class="g">ika</span></div>
+    <div class="words">Objasňujeme · Spájame · Posúvame</div>
+    <a class="site" href="https://forensika.eu/">forensika.eu ›</a>
+    <div class="copy">© 2026 MUDr. Ján Šikuta, PhD. · <a href="mailto:forensika.eu@icloud.com">forensika.eu@icloud.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
