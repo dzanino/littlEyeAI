@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" data-lang="sk" data-title-sk="littlEye AI — Ochrana súkromia" data-title-en="littlEye AI — Privacy Policy">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>littlEye AI — Ochrana súkromia / Privacy Policy</title>
+<title>littlEye AI — Ochrana súkromia</title>
 <style>
   :root {
     --navy: #171c33; --violet: #7b3d8d; --pink: #b85c8f;
@@ -34,30 +34,41 @@
            border-radius: 999px; padding: 4px 14px; font-weight: 700; font-size: 14px; margin: 4px 4px 4px 0; }
   @media (prefers-color-scheme: dark) { .badge { background: #12321f; color: #7fd7a4; } }
   a { color: var(--pink); }
-  .lang { border-top: 2px dashed rgba(120, 100, 160, .25); margin-top: 34px; padding-top: 30px; }
-  footer { text-align: center; padding: 30px 20px 50px; }
+    footer { text-align: center; padding: 30px 20px 50px; }
   .forensika { font-weight: 900; font-size: 26px; }
   .f-n { color: #171c33; } .f-i { color: #3b73f0; } .f-k { color: #26805a; } .f-a { color: #a6a1e6; }
   @media (prefers-color-scheme: dark) { .f-n { color: #cdd6f4; } }
   footer .tag { letter-spacing: 2.5px; font-size: 11px; color: var(--muted); margin-top: 6px; }
+  html[data-lang="sk"] .en{display:none !important}
+  html[data-lang="en"] .sk{display:none !important}
+  .langbar{display:flex;gap:8px;justify-content:flex-end;max-width:760px;margin:0 auto 18px;}
+  .langbar button{font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#fff;background:transparent;
+    border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:8px 14px;cursor:pointer;}
+  .langbar button[aria-pressed="true"]{background:#fff;color:#4d2970;border-color:#fff;}
+  footer [data-fz]{cursor:default;}
 </style>
 </head>
 <body>
 
 <div class="hero">
+  <div class="langbar" role="group" aria-label="Language">
+    <button type="button" data-set="sk" aria-pressed="true">Slovenčina</button>
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+  </div>
   <div class="eye">👁️</div>
   <h1>littl<span class="cap">E</span>ye AI</h1>
-  <p>Ochrana súkromia · Privacy Policy</p>
+  <p class="sk">Ochrana súkromia</p><p class="en">Privacy Policy</p>
 </div>
 
 <main>
   <div class="card">
-    <span class="badge">✓ Žiadny zber údajov</span>
-    <span class="badge">✓ Všetko on-device</span>
-    <span class="badge">✓ Bez internetu</span>
+    <span class="badge"><span class="sk">✓ Žiadny zber údajov</span><span class="en">✓ No data collection</span></span>
+    <span class="badge"><span class="sk">✓ Všetko v zariadení</span><span class="en">✓ Everything on-device</span></span>
+    <span class="badge"><span class="sk">✓ Bez internetu</span><span class="en">✓ No internet</span></span>
 
+    <div class="sk">
     <h2>Zásady ochrany súkromia</h2>
-    <p class="muted">Platné od 8. augusta 2026 · aplikácia littlEye AI (iOS, iPadOS, macOS)</p>
+    <p class="muted">Platné od 23. septembra 2026 (doplnená časť o webovej stránke) · aplikácia littlEye AI (iOS, iPadOS, macOS)</p>
 
     <h3>Stručne</h3>
     <p><strong>littlEye AI nezbiera, neukladá ani neodosiela žiadne vaše údaje.</strong>
@@ -95,12 +106,20 @@
        Nie je zdravotníckou pomôckou a neposkytuje diagnózu — finálne posúdenie vždy
        patrí patológovi.</p>
 
+    <h3>Táto webová stránka</h3>
+    <p>Stránka o aplikácii (GitHub Pages) počíta anonymne návštevy: pri prvom otvorení v okne prehliadača
+       sa zvýši súhrnné počítadlo návštev za deň. Nepoužíva cookies, neukladá identifikátor ani nič o vás;
+       v prehliadači si pamätá len to, že návšteva v tomto okne už bola započítaná, a zvolený jazyk.
+       Počítadlo beží na službe abacus.jasoncameron.dev, ktorá — ako každý server — vidí technické údaje
+       požiadavky (napr. IP adresu). Aplikácie sa to netýka.</p>
+
     <h3>Kontakt</h3>
     <p>MUDr. Ján Šikuta, PhD., súdny lekár · <a href="mailto:forensika.eu@icloud.com">forensika.eu@icloud.com</a></p>
+    </div>
 
-    <div class="lang" lang="en">
-      <h2>Privacy Policy (English)</h2>
-      <p class="muted">Effective 8 August 2026 · littlEye AI app (iOS, iPadOS, macOS)</p>
+    <div class="en" lang="en">
+      <h2>Privacy Policy</h2>
+      <p class="muted">Effective 23 September 2026 (section on the website added) · littlEye AI app (iOS, iPadOS, macOS)</p>
       <h3>In short</h3>
       <p><strong>littlEye AI does not collect, store or transmit any of your data.</strong>
          The app makes no network connections — all microphotographs, cases, reviews
@@ -126,6 +145,12 @@
       <p>littlEye AI is a research and decision-support tool for qualified professionals.
          It is not a medical device and does not provide diagnoses — the final assessment
          always belongs to the pathologist.</p>
+      <h3>This website</h3>
+      <p>The app's web page (GitHub Pages) counts visits anonymously: the first time it is opened in a browser
+         tab, a daily aggregate visit counter goes up by one. It uses no cookies and stores no identifier or anything
+         about you; the browser only remembers that the visit in this tab has already been counted, and your language
+         choice. The counter runs on abacus.jasoncameron.dev, which — like any server — sees the technical details of
+         the request (e.g. the IP address). This does not concern the app.</p>
       <h3>Contact</h3>
       <p>Ján Šikuta, MD, PhD., forensic pathologist · <a href="mailto:forensika.eu@icloud.com">forensika.eu@icloud.com</a></p>
     </div>
@@ -134,10 +159,12 @@
 
 <footer>
   <div class="forensika"><span class="f-n">Forens</span><span class="f-i">i</span><span class="f-k">k</span><span class="f-a">a</span></div>
-  <div class="tag">OBJASŇUJEME · SPÁJAME · POSÚVAME</div>
+  <div class="tag"><span class="sk">OBJASŇUJEME · SPÁJAME · POSÚVAME</span><span class="en">CLARIFY · CONNECT · ADVANCE</span></div>
   <p style="margin-top:8px"><a href="https://forensika.eu">forensika.eu ›</a></p>
-  <p class="muted" style="margin-top:6px">littlEye AI — súdnolekársky projekt Forensika · <a href="support.html">Podpora / Support</a></p>
+  <p class="muted" style="margin-top:6px"><span data-fz>littlEye AI</span> — <span class="sk">projekt Forensika</span><span class="en">a Forensika project</span> · <a href="index.html"><span class="sk">Domov</span><span class="en">Home</span></a> · <a href="support.html"><span class="sk">Podpora</span><span class="en">Support</span></a></p>
 </footer>
 
+<script src="lang.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

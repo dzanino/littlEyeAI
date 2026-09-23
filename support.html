@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" data-lang="sk" data-title-sk="littlEye AI — Podpora" data-title-en="littlEye AI — Support">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>littlEye AI — Podpora / Support</title>
+<title>littlEye AI — Podpora</title>
 <style>
   :root {
     --navy: #171c33; --violet: #7b3d8d; --pink: #b85c8f;
@@ -37,29 +37,41 @@
   summary { cursor: pointer; font-weight: 650; padding: 4px 0; }
   table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 15px; }
   th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid rgba(120,100,160,.18); }
-  .lang { border-top: 2px dashed rgba(120, 100, 160, .25); margin-top: 34px; padding-top: 30px; }
-  footer { text-align: center; padding: 30px 20px 50px; }
+    footer { text-align: center; padding: 30px 20px 50px; }
   .forensika { font-weight: 900; font-size: 26px; }
   .f-n { color: #171c33; } .f-i { color: #3b73f0; } .f-k { color: #26805a; } .f-a { color: #a6a1e6; }
   @media (prefers-color-scheme: dark) { .f-n { color: #cdd6f4; } }
   footer .tag { letter-spacing: 2.5px; font-size: 11px; color: var(--muted); margin-top: 6px; }
+  html[data-lang="sk"] .en{display:none !important}
+  html[data-lang="en"] .sk{display:none !important}
+  .langbar{display:flex;gap:8px;justify-content:flex-end;max-width:760px;margin:0 auto 18px;}
+  .langbar button{font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#fff;background:transparent;
+    border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:8px 14px;cursor:pointer;}
+  .langbar button[aria-pressed="true"]{background:#fff;color:#4d2970;border-color:#fff;}
+  footer [data-fz]{cursor:default;}
 </style>
 </head>
 <body>
 
 <div class="hero">
+  <div class="langbar" role="group" aria-label="Language">
+    <button type="button" data-set="sk" aria-pressed="true">Slovenčina</button>
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+  </div>
   <div class="eye">👁️</div>
   <h1>littl<span class="cap">E</span>ye AI</h1>
-  <p>Podpora · Support</p>
+  <p class="sk">Podpora</p><p class="en">Support</p>
 </div>
 
 <main>
   <div class="card">
+    <div class="sk">
     <h2>O aplikácii</h2>
     <p>littlEye AI je aplikácia pre súdnych lekárov, patológov a študentov medicíny: tréning a vyhodnocovanie
        AI modelov z mikrofotografií histologických preparátov (HE farbenie), pracovné
-       prípady so súhrnmi, atlas diagnóz a edukačný modul špeciálnych farbení a IHC.
-       Všetko beží výhradne vo vašom zariadení.</p>
+       prípady so súhrnmi, atlas diagnóz, edukačný modul špeciálnych farbení a IHC,
+       kvantifikácia obrazu a kalkulačka IHC dezmínu s nástrojmi pre štúdiu.
+       Všetko beží výhradne vo vašom zariadení. Aplikácia je zadarmo.</p>
 
     <p class="muted">Projekt troch pracovísk LF UK v Bratislave — Ústavu histológie a embryológie,
        Ústavu patologickej anatómie a Ústavu súdneho lekárstva a súdnolekárskej toxikológie.</p>
@@ -68,7 +80,7 @@
     <table>
       <tr><th>Zariadenie</th><th>Minimálny systém</th></tr>
       <tr><td>iPhone</td><td>iOS 17</td></tr>
-      <tr><td>iPad</td><td>iPadOS 17 (tréning: modely s čipom M)</td></tr>
+      <tr><td>iPad</td><td>iPadOS 17 (tréning je najrýchlejší na modeloch s čipom M)</td></tr>
       <tr><td>Mac</td><td>macOS 14 (Apple Silicon odporúčané)</td></tr>
     </table>
 
@@ -105,6 +117,14 @@
     </details>
 
     <details>
+      <summary>Ako zmeriam dezmín z dvojice snímok (DAB + HE)?</summary>
+      <p>Nástroje → <em>IHC dezmín</em>. Hore na obrazovke načítajte do slotu 1 sken alebo mikrofotografiu
+         rezu farbeného DAB a do slotu 2 fotku toho istého bločku farbeného HE, pri rovnakom zväčšení.
+         Aplikácia hneď ukáže CPA, plochu myocytov a Index 2, skontroluje kvalitu oboch snímok a porovnateľnosť
+         dvojice; <em>Použiť do vstupov</em> zapíše hodnoty do výrezku. Podrobne v manuáli 3.3, kapitola 14.</p>
+    </details>
+
+    <details>
       <summary>Ako si zálohujem dáta?</summary>
       <p>Prípady → menu ⋯ → <em>Zálohovať archív na disk</em>. Vyberiete priečinok
          (externý disk, USB-C, sieťové úložisko) a aplikácia doň zapíše kompletnú zálohu
@@ -120,46 +140,106 @@
     <h2 style="margin-top:22px">Kontakt</h2>
     <p>Otázky, hlásenia chýb aj návrhy na vylepšenie posielajte na:</p>
     <p><a class="contact" href="mailto:forensika.eu@icloud.com?subject=littlEye%20AI%20—%20podpora">✉️ forensika.eu@icloud.com</a></p>
-    <h2>Návody / User guides</h2>
+    <h2>Návody</h2>
     <p>
-      <a href="littlEye_AI_navod_pre_lekarov_v3.pdf">Návod pre lekárov (PDF, slovensky)</a><br>
-      <a href="littlEye_AI_user_guide_v3_EN.pdf">User guide for physicians (PDF, English)</a><br>
-      <a href="littlEye_AI_ako_sa_uci.pdf">Ako sa littlEye AI učí — postup dotrénovania (PDF, slovensky)</a><br>
-      <a href="littlEye_AI_od_sklicka_po_model.pdf">Od sklíčka po model — snímanie, tréning, export (PDF, slovensky)</a><br>
-      <a href="littlEye_AI_zdroje_dat.pdf">Zdroje trénovacích dát a metodika (PDF, slovensky)</a><br>
-      <a href="littlEye_AI_slide_to_model_EN.pdf">From slide to model — capture, training, export (PDF, English)</a><br>
-      <a href="littlEye_AI_data_sources_EN.pdf">Training-data sources and methodology (PDF, English)</a><br>
-      <a href="littlEye_AI_how_it_learns_EN.pdf">How littlEye AI learns — retraining step by step (PDF, English)</a>
+      <a href="littlEye_AI_manual_3.3_SK.pdf"><strong>Manuál 3.3 pre lekárov a študentov (PDF, slovensky)</strong></a><br>
+      <a href="littlEye_AI_manual_3.3_EN.pdf">Manual 3.3 (PDF, anglicky)</a><br>
+      <a href="littlEye_AI_ako_sa_uci.pdf">Ako sa littlEye AI učí — postup dotrénovania (PDF)</a><br>
+      <a href="littlEye_AI_od_sklicka_po_model.pdf">Od sklíčka po model — snímanie, tréning, export (PDF)</a><br>
+      <a href="littlEye_AI_zdroje_dat.pdf">Zdroje trénovacích dát a metodika (PDF)</a><br>
+      <a href="littlEye_AI_navod_pre_lekarov_v3.pdf">Pôvodný návod pre lekárov, verzia 3.0 (PDF)</a>
     </p>
     <p class="muted" style="margin-top:8px">MUDr. Ján Šikuta, PhD., súdny lekár. Do správy prosím uveďte
        zariadenie, verziu systému a verziu aplikácie (Info o aplikácii).</p>
 
-    <div class="lang" lang="en">
-      <h2>Support (English)</h2>
-      <p>littlEye AI is an app for forensic pathologists: training and evaluating AI models
-         from histology slide microphotographs (H&amp;E), case workflow with summaries,
-         a diagnosis atlas and an education module for special stains and IHC.
-         Everything runs entirely on your device.</p>
-      <h3>Requirements</h3>
-      <p>iPhone (iOS 17+), iPad (iPadOS 17+; on-device training on M-chip models),
-         Mac (macOS 14+, Apple Silicon recommended).</p>
-      <h3>Contact</h3>
-      <p>Questions, bug reports and suggestions:
-         <a href="mailto:forensika.eu@icloud.com?subject=littlEye%20AI%20—%20support">forensika.eu@icloud.com</a>
-         (Ján Šikuta, MD, PhD., forensic pathologist). Please include your device, OS version
-         and app version (About screen).</p>
-      <p class="muted">littlEye AI is a research and decision-support tool, not a medical
-         device — the final assessment always belongs to the pathologist or forensic physician.</p>
+    </div>
+
+    <div class="en" lang="en">
+      <h2>About the app</h2>
+      <p>littlEye AI is an app for forensic pathologists, pathologists and medical students: training and
+         evaluating AI models from histology slide microphotographs (H&amp;E), case workflow with summaries,
+         a diagnosis atlas, an education module for special stains and IHC, image quantification and a desmin
+         IHC calculator with study tools. Everything runs entirely on your device. The app is free.</p>
+      <p class="muted">A project of three departments of the Faculty of Medicine, Comenius University in Bratislava —
+         Histology and Embryology, Pathological Anatomy, and Forensic Medicine and Forensic Toxicology.</p>
+
+      <h3>Supported devices</h3>
+      <table>
+        <tr><th>Device</th><th>Minimum system</th></tr>
+        <tr><td>iPhone</td><td>iOS 17</td></tr>
+        <tr><td>iPad</td><td>iPadOS 17 (training is fastest on M-chip models)</td></tr>
+        <tr><td>Mac</td><td>macOS 14 (Apple Silicon recommended)</td></tr>
+      </table>
+
+      <h2 style="margin-top:22px">FAQ</h2>
+      <details>
+        <summary>How do I get images from a scanner or microscope into the app?</summary>
+        <p>The app reads ready-made JPEG, PNG, TIFF and HEIC files — no drivers needed. Export the images from
+           your camera or scanner software and move them via the Files app (USB-C drive, SMB network share,
+           iCloud Drive) or AirDrop. A detailed guide is in the app under <em>Hardware and capture</em>.</p>
+      </details>
+      <details>
+        <summary>How many images do I need to train a model?</summary>
+        <p>The technical minimum is 2 classes of 5 images each; a sensible start is 30+ images per class from
+           several cases, at one magnification. Rules for trainers are in the app under <em>Methodology</em>.</p>
+      </details>
+      <details>
+        <summary>What is a .le3AI file?</summary>
+        <p>A portable package of a trained model: the Core ML model + metrics (including the confusion matrix)
+           + an audit trail (author, date, classes). Share it via AirDrop, mail or Files and import it with a
+           double-click or tap. Slide images are never part of it.</p>
+      </details>
+      <details>
+        <summary>The model gives low confidence on a new slide — what now?</summary>
+        <p>The most common causes: a different magnification than in training, too few varied training images,
+           or a finding the model does not know. Add images of that class (ideally from several cases), keep one
+           magnification and watch the confusion matrix in the model detail — it shows which classes get mixed up.</p>
+      </details>
+      <details>
+        <summary>How do I measure desmin from an image pair (DAB + H&amp;E)?</summary>
+        <p>Tools → <em>Desmin IHC</em>. At the top of the screen load a scan or microphotograph of the DAB-stained
+           section into slot 1 and a photo of the same block stained with H&amp;E into slot 2, at the same
+           magnification. The app shows the CPA, the myocyte area and Index 2 at once, checks the quality of both
+           images and whether the pair is comparable; <em>Use as the inputs</em> writes the values into the section.
+           Details in manual 3.3, chapter 14.</p>
+      </details>
+      <details>
+        <summary>How do I back up my data?</summary>
+        <p>Cases → ⋯ menu → <em>Back up archive to disk</em>. Choose a folder (external disk, USB-C, network
+           storage) and the app writes a complete backup there (register, images, models, manifest).</p>
+      </details>
+      <details>
+        <summary>Is the app a medical device?</summary>
+        <p>No. littlEye AI is a research and decision-support tool for qualified professionals. It does not
+           provide a diagnosis — the final assessment always belongs to the pathologist or forensic physician.</p>
+      </details>
+
+      <h2 style="margin-top:22px">Contact</h2>
+      <p>Questions, bug reports and suggestions are welcome at:</p>
+      <p><a class="contact" href="mailto:forensika.eu@icloud.com?subject=littlEye%20AI%20%E2%80%94%20support">✉️ forensika.eu@icloud.com</a></p>
+      <h2>User guides</h2>
+      <p>
+        <a href="littlEye_AI_manual_3.3_EN.pdf"><strong>Manual 3.3 for physicians and students (PDF, English)</strong></a><br>
+        <a href="littlEye_AI_manual_3.3_SK.pdf">Manual 3.3 (PDF, Slovak)</a><br>
+        <a href="littlEye_AI_how_it_learns_EN.pdf">How littlEye AI learns — retraining step by step (PDF)</a><br>
+        <a href="littlEye_AI_slide_to_model_EN.pdf">From slide to model — capture, training, export (PDF)</a><br>
+        <a href="littlEye_AI_data_sources_EN.pdf">Training-data sources and methodology (PDF)</a><br>
+        <a href="littlEye_AI_user_guide_v3_EN.pdf">Original user guide for physicians, version 3.0 (PDF)</a>
+      </p>
+      <p class="muted" style="margin-top:8px">Ján Šikuta, MD, PhD, forensic pathologist. Please include your
+         device, OS version and app version (About screen) in your message.</p>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="forensika"><span class="f-n">Forens</span><span class="f-i">i</span><span class="f-k">k</span><span class="f-a">a</span></div>
-  <div class="tag">OBJASŇUJEME · SPÁJAME · POSÚVAME</div>
+  <div class="tag"><span class="sk">OBJASŇUJEME · SPÁJAME · POSÚVAME</span><span class="en">CLARIFY · CONNECT · ADVANCE</span></div>
   <p style="margin-top:8px"><a href="https://forensika.eu">forensika.eu ›</a></p>
-  <p class="muted" style="margin-top:6px">littlEye AI — súdnolekársky projekt Forensika · <a href="privacy.html">Ochrana súkromia / Privacy</a></p>
+  <p class="muted" style="margin-top:6px"><span data-fz>littlEye AI</span> — <span class="sk">projekt Forensika</span><span class="en">a Forensika project</span> · <a href="index.html"><span class="sk">Domov</span><span class="en">Home</span></a> · <a href="privacy.html"><span class="sk">Ochrana súkromia</span><span class="en">Privacy</span></a></p>
 </footer>
 
+<script src="lang.js"></script>
+<script src="site.js"></script>
 </body>
 </html>
