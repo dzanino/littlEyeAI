@@ -19,7 +19,7 @@ Keywords: littlEye AI histológia, offline forenzná aplikácia, AI v patológii
 v zariadení · forensic histology AI on-device, on-device Core ML histology training, digital
 pathology without cloud, H&E slide classifier.
 
-Author: Ján Šikuta, MD, PhD · forensika.eu@icloud.com. Research and decision-support tool for
+Author: Ján Šikuta, MD, PhD · admin@forensika.eu. Research and decision-support tool for
 qualified professionals — not a medical device; it does not provide diagnoses.
 
 ---
