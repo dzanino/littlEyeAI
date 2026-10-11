@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dzanino.github.io/littlEyeAI/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dzanino.github.io/littlEyeAI/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dzanino.github.io/littlEyeAI/?lang=sk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dzanino.github.io/littlEyeAI/?lang=en"/>
+  </url>
+  <url>
+    <loc>https://dzanino.github.io/littlEyeAI/navod/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dzanino.github.io/littlEyeAI/navod/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dzanino.github.io/littlEyeAI/navod/?lang=sk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dzanino.github.io/littlEyeAI/navod/?lang=en"/>
+  </url>
+  <url>
+    <loc>https://dzanino.github.io/littlEyeAI/support.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dzanino.github.io/littlEyeAI/support.html"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dzanino.github.io/littlEyeAI/support.html?lang=sk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dzanino.github.io/littlEyeAI/support.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://dzanino.github.io/littlEyeAI/privacy.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dzanino.github.io/littlEyeAI/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://dzanino.github.io/littlEyeAI/privacy.html?lang=sk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dzanino.github.io/littlEyeAI/privacy.html?lang=en"/>
+  </url>
+</urlset>
