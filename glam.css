@@ -1,0 +1,130 @@
+/* littlEye AI - glam.css (rodina forensika.eu)
+   Tmavá noc, aurora vo farbách appky, sklenené karty, pätkové nadpisy (systémové písma,
+   bez Google Fonts). Načítava sa po pôvodnom štýle stránky a prepisuje jeho farby. */
+:root{
+  --g-bg:#0b0614; --g-ink:#eef2fa; --g-ink2:#d8e0ec; --g-muted:#a3b0c4; --g-soft:#8592a8;
+  --g-line:rgba(255,255,255,.10); --g-line2:rgba(255,255,255,.18);
+  --g-acc:#F2B6CC; --g-grad:linear-gradient(100deg,#ffd6e4 0%,#f2b6cc 30%,#c97ab0 65%,#9e52b5 100%); --g-btn-ink:#1b0b24;
+  --g-serif:"New York","Iowan Old Style",ui-serif,"Palatino Linotype",Palatino,Georgia,serif;
+  color-scheme:dark;
+}
+html{background:var(--g-bg)!important;}
+body{
+  color:var(--g-ink2)!important;
+  background:
+    radial-gradient(1100px 700px at 12% -8%, rgba(153,66,133,.16), transparent 60%),
+    radial-gradient(900px 650px at 92% 4%, rgba(92,43,122,.20), transparent 62%),
+    radial-gradient(1200px 900px at 50% 120%, rgba(237,158,189,.10), transparent 60%),
+    var(--g-bg)!important;
+  background-attachment:fixed!important;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+body > *{position:relative;z-index:1;}
+::selection{background:rgba(92,43,122,.45);color:#fff;}
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(620px 340px at 50% 10%, rgba(153,66,133,.30), transparent 70%),
+    radial-gradient(560px 320px at 22% 85%, rgba(92,43,122,.22), transparent 70%),
+    radial-gradient(560px 320px at 80% 80%, rgba(237,158,189,.18), transparent 70%),
+    rgba(255,255,255,.015)!important;
+  border-bottom:1px solid var(--g-line);overflow:hidden;position:relative;
+}
+.hero::after{
+  content:"";position:absolute;left:50%;top:-10%;width:min(1100px,96vw);height:120%;transform:translateX(-50%);
+  background:conic-gradient(from 210deg at 50% 40%, rgba(153,66,133,0), rgba(153,66,133,.14), rgba(92,43,122,.16), rgba(237,158,189,.10), rgba(153,66,133,0));
+  filter:blur(60px);pointer-events:none;z-index:0;animation:g-aurora 18s ease-in-out infinite alternate;
+}
+.hero > *{position:relative;z-index:1;}
+@keyframes g-aurora{0%{transform:translateX(-50%) rotate(0deg) scale(1);}100%{transform:translateX(-50%) rotate(14deg) scale(1.08);}}
+@media (prefers-reduced-motion:reduce){.hero::after{animation:none;}}
+h1{font-family:var(--g-serif)!important;font-weight:600!important;letter-spacing:-.01em!important;color:#fff!important;}
+.hero h1{font-size:clamp(40px,7.5vw,78px)!important;line-height:1.02!important;text-shadow:0 10px 50px rgba(153,66,133,.20);}
+h2,h3{color:#fff!important;}
+h2{font-family:var(--g-serif)!important;font-weight:600!important;letter-spacing:-.005em;}
+.kicker,.tagline,.tag{color:var(--g-acc)!important;letter-spacing:.3em!important;}
+.lede,.lead,.hero p{color:#cbd5e6!important;}
+p,li,td,dd{color:var(--g-muted);}
+b,strong{color:#fff!important;}
+a{color:var(--g-acc);}
+a:hover{color:#fff;}
+.muted,.mala{color:var(--g-soft)!important;}
+.hero img,.hero .icon,.hero .logo,.appicon{box-shadow:0 0 0 1px rgba(255,255,255,.14),0 26px 60px rgba(0,0,0,.55),0 0 80px rgba(153,66,133,.25)!important;}
+
+/* Tlačidlá */
+.btn-primary,.btn-akcent,.contact,.btn:not(.btn-ghost):not(.btn-sek):not(.btn-biele){
+  background:var(--g-grad)!important;color:var(--g-btn-ink)!important;border:0!important;font-weight:700!important;
+  box-shadow:0 12px 32px rgba(153,66,133,.30),inset 0 1px 0 rgba(255,255,255,.45)!important;
+}
+.btn-primary:hover,.btn-akcent:hover,.contact:hover{transform:translateY(-2px);}
+.btn-ghost,.btn-sek,.btn-biele{
+  background:rgba(255,255,255,.05)!important;color:#eef2fa!important;border:1px solid var(--g-line2)!important;backdrop-filter:blur(8px);
+}
+.btn-ghost:hover,.btn-sek:hover,.btn-biele:hover{background:rgba(255,255,255,.12)!important;}
+.store{background:#fff!important;color:#0a1524!important;box-shadow:0 8px 22px rgba(0,0,0,.35)!important;}
+.store:hover{background:#f1f5fb!important;transform:translateY(-2px);}
+
+/* Karty a sklo */
+.card,.d,.tier,.karta,details,.note,.poznamka,.upozornenie,table,.doc-link,ul.docs a,.headline,.vnorena,.step{
+  background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.022))!important;
+  border:1px solid var(--g-line)!important;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 20px 50px rgba(0,0,0,.28)!important;
+}
+.card,.tier,.karta{border-radius:22px!important;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+.card:hover,.tier:hover,.karta:hover,ul.docs a:hover,.doc-link:hover{transform:translateY(-3px);border-color:rgba(92,43,122,.40)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 26px 60px rgba(0,0,0,.36),0 0 50px rgba(153,66,133,.10)!important;}
+.pill,.stitok,.odznaky li{background:rgba(255,255,255,.05)!important;border:1px solid var(--g-line2)!important;color:#dbe4f0!important;}
+.price.free,.price.paid{background:var(--g-grad)!important;color:var(--g-btn-ink)!important;}
+th{color:var(--g-acc)!important;background:rgba(255,255,255,.04)!important;}
+th,td{border-bottom:1px solid var(--g-line)!important;}
+summary{color:#fff!important;}
+summary::marker{color:var(--g-acc);}
+code,kbd{background:rgba(255,255,255,.08)!important;color:#f1ecff!important;border-radius:5px;}
+hr{border-top-color:var(--g-line)!important;}
+
+/* Pätička */
+footer{background:rgba(255,255,255,.02)!important;border-top:1px solid var(--g-line)!important;color:var(--g-soft)!important;}
+footer a{color:#dbe4f0!important;}
+footer .copy,footer .tag,footer .words,footer .slogan,footer .povod{color:var(--g-soft)!important;}
+
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .card,.tier,.karta,.d{animation:g-rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%;}
+  }
+}
+@keyframes g-rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+@media (max-width:700px){body{background-attachment:scroll!important;}}
+
+/* littlEye AI: slivka, purpur, orchidea, ruž */
+:root{--bg:#0b0614;--karta:rgba(255,255,255,.05);--karta-vnorena:rgba(255,255,255,.04);--ram:rgba(255,255,255,.12);--text:#eef0fa;--text-2:#b9b3c6;--akcent-text:#F2B6CC;--perla:rgba(242,182,204,.12);--perla-text:#fff;--tien-hero:none;}
+.hero{padding-bottom:84px!important;}
+.hnav a{color:#f4e8f2!important;}
+.hnav a:hover,.hnav a[aria-current="page"]{color:var(--g-acc)!important;}
+.langbar button{background:rgba(255,255,255,.06)!important;border:1px solid var(--g-line2)!important;color:#fff!important;}
+.langbar button[aria-pressed="true"]{background:var(--g-grad)!important;color:var(--g-btn-ink)!important;border-color:transparent!important;}
+.hero .pod,.hero .meta{color:var(--g-acc)!important;}
+section > h2{font-size:clamp(28px,4.2vw,42px)!important;}
+.karta.perla{background:linear-gradient(135deg,rgba(242,182,204,.14),rgba(158,82,181,.12))!important;border-color:rgba(242,182,204,.35)!important;}
+.ikona{color:var(--g-acc)!important;}
+.kroky li::before,ol.kapitoly li::before{background:var(--g-grad)!important;color:var(--g-btn-ink)!important;box-shadow:0 0 20px rgba(201,122,176,.45);}
+.kroky li,.mriezka .karta{color:var(--g-muted);}
+.galeria img{border:1px solid rgba(255,255,255,.14)!important;box-shadow:0 22px 50px rgba(0,0,0,.5)!important;}
+.galeria figcaption{color:var(--g-soft)!important;}
+ul.docs a{color:#fff!important;}
+ul.docs .popis{color:var(--g-muted)!important;}
+footer .brand{font-family:var(--g-serif);color:#fff;}
+footer .brand .g{background:var(--g-grad)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;}
+footer nav a{color:#f1e6f2!important;}
+.stitok{color:var(--g-acc)!important;}
+ol.kapitoly li,.kde li,.galeria figure,.kroky li{
+  background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.022))!important;
+  border:1px solid var(--g-line)!important;color:var(--g-muted)!important;
+}
+ol.kapitoly li:target{border-color:rgba(242,182,204,.5)!important;box-shadow:0 0 40px rgba(201,122,176,.20)!important;}
+ol.kapitoly h3,.kde b{color:#fff!important;}
+.skip{background:#1b0b24!important;color:#fff!important;}
