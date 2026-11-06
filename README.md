@@ -11,9 +11,7 @@ AES-GCM-encrypted `.le3AI` model / `.le3set` dataset sharing. **Free since versi
 - Manuals (SK/EN), "how it learns", data sources: this site → https://dzanino.github.io/littlEyeAI/
 - Part of the **Forensika** family of offline forensic-medicine apps: https://forensika.eu/
 
-Developed in collaboration with three departments of the Faculty of Medicine, Comenius University
-in Bratislava (Histology and Embryology; Pathological Anatomy; Forensic Medicine and Forensic
-Toxicology).
+Colleagues from several departments have promised help; there is no formal institutional partnership so far.
 
 Keywords: littlEye AI histológia, offline forenzná aplikácia, AI v patológii, tréning modelu
 v zariadení · forensic histology AI on-device, on-device Core ML histology training, digital
