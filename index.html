@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sk" data-lang="sk" data-title-sk="littlEye AI: histológia a AI pre súdnych lekárov, patológov a študentov" data-title-en="littlEye AI: on-device histology AI for forensic physicians, pathologists and students">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-IEl4sVmYngv1pkiXYtDKUw9gQbMIu+5tr6KCs9xq1Gs=' 'sha256-6oUNFQtaQQ9zeKQ2gyjqZpoLoybpibyqp5jvag7skt4='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; media-src 'self'; connect-src 'self' https://abacus.jasoncameron.dev; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>littlEye AI: histológia a AI pre súdnych lekárov, patológov a študentov</title>
 <meta name="description" content="littlEye AI: tréning a vyhodnocovanie AI modelov z histologických preparátov priamo v iPhone, iPade a Macu, pre súdnych lekárov, patológov a študentov medicíny. Zadarmo, všetko v zariadení, nie je zdravotnícka pomôcka.">
@@ -168,16 +168,17 @@
       <h2 class="sk">Snímky</h2>
       <h2 class="en">Screenshots</h2>
       <div class="galeria">
-        <figure class="mac"><img src="assets/screens/mac_prehlad.png" loading="lazy" onerror="fzSkry(this)" alt="Prehľad na Macu: karta Ďalší krok, tri štatistiky a dataset po orgánoch"><figcaption><span class="sk">Prehľad na Macu: Ďalší krok</span><span class="en">Overview on the Mac: Next step</span></figcaption></figure>
-        <figure class="mac"><img src="assets/screens/mac_dataset.png" loading="lazy" onerror="fzSkry(this)" alt="Dataset na Macu: mriežka 27 orgánov po sústavách s počtom označených snímok"><figcaption><span class="sk">Dataset: 27 orgánov po sústavách</span><span class="en">Dataset: 27 organs by system</span></figcaption></figure>
-        <figure class="mac"><img src="assets/screens/mac_kvantifikacia.png" loading="lazy" onerror="fzSkry(this)" alt="Kvantifikácia obrazu na Macu: snímka s prekrytím vľavo, výsledok s intervalom vpravo"><figcaption><span class="sk">Kvantifikácia obrazu: prístrojový panel</span><span class="en">Image quantification: instrument panel</span></figcaption></figure>
-        <figure class="mac"><img src="assets/screens/mac_dezmin.png" loading="lazy" onerror="fzSkry(this)" alt="IHC dezmín na Macu: dvojica snímok DAB a HE a Index 2"><figcaption><span class="sk">IHC dezmín: dvojica DAB + HE</span><span class="en">Desmin IHC: the DAB + H&amp;E pair</span></figcaption></figure>
-        <figure class="ios"><img src="assets/screens/ios_prehlad.png" loading="lazy" onerror="fzSkry(this)" alt="Prehľad na iPhone so záložkami Prehľad, Vyhodnotiť, Dataset, Atlas a Viac"><figcaption><span class="sk">iPhone: Prehľad a záložky</span><span class="en">iPhone: Overview and tabs</span></figcaption></figure>
-        <figure class="ios"><img src="assets/screens/ios_vyhodnotenie.png" loading="lazy" onerror="fzSkry(this)" alt="Vyhodnotenie snímky na iPhone s prvotnou diagnózou (návrh) a istotou v percentách"><figcaption><span class="sk">iPhone: Vyhodnotiť snímku</span><span class="en">iPhone: Evaluate image</span></figcaption></figure>
+        <figure class="mac"><img src="assets/screens/mac_prehlad.webp" loading="lazy" data-fz-skry alt="Prehľad na Macu: karta Ďalší krok, tri štatistiky a dataset po orgánoch"><figcaption><span class="sk">Prehľad na Macu: Ďalší krok</span><span class="en">Overview on the Mac: Next step</span></figcaption></figure>
+        <figure class="mac"><img src="assets/screens/mac_dataset.webp" loading="lazy" data-fz-skry alt="Dataset na Macu: mriežka 27 orgánov po sústavách s počtom označených snímok"><figcaption><span class="sk">Dataset: 27 orgánov po sústavách</span><span class="en">Dataset: 27 organs by system</span></figcaption></figure>
+        <figure class="mac"><img src="assets/screens/mac_kvantifikacia.webp" loading="lazy" data-fz-skry alt="Kvantifikácia obrazu na Macu: snímka s prekrytím vľavo, výsledok s intervalom vpravo"><figcaption><span class="sk">Kvantifikácia obrazu: prístrojový panel</span><span class="en">Image quantification: instrument panel</span></figcaption></figure>
+        <figure class="mac"><img src="assets/screens/mac_dezmin.webp" loading="lazy" data-fz-skry alt="IHC dezmín na Macu: dvojica snímok DAB a HE a Index 2"><figcaption><span class="sk">IHC dezmín: dvojica DAB + HE</span><span class="en">Desmin IHC: the DAB + H&amp;E pair</span></figcaption></figure>
+        <figure class="ios"><img src="assets/screens/ios_prehlad.webp" loading="lazy" data-fz-skry alt="Prehľad na iPhone so záložkami Prehľad, Vyhodnotiť, Dataset, Atlas a Viac"><figcaption><span class="sk">iPhone: Prehľad a záložky</span><span class="en">iPhone: Overview and tabs</span></figcaption></figure>
+        <figure class="ios"><img src="assets/screens/ios_vyhodnotenie.webp" loading="lazy" data-fz-skry alt="Vyhodnotenie snímky na iPhone s prvotnou diagnózou (návrh) a istotou v percentách"><figcaption><span class="sk">iPhone: Vyhodnotiť snímku</span><span class="en">iPhone: Evaluate image</span></figcaption></figure>
       </div>
       <script>
         /* Snímky 4.0 vznikajú až po dokončení appky, chýbajúci súbor skryje figúru; bez jedinej snímky sa skryje celá sekcia. */
         function fzSkry(img){var f=img.closest('figure');if(!f)return;f.hidden=true;var g=f.parentNode;if(!g.querySelector('figure:not([hidden])')){var s=g.closest('section');if(s)s.hidden=true;}}
+        document.querySelectorAll('img[data-fz-skry]').forEach(function(i){if(i.complete&&!i.naturalWidth)fzSkry(i);else i.addEventListener('error',function(){fzSkry(i)});});
       </script>
     </section>
 
